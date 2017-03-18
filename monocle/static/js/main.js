@@ -362,7 +362,7 @@ window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) 
   params[key] = value;
 });
 
-if(params.lat && params.lon){
+if((params.lat).parseFloat && (params.lon).parseFloat){
     var map = new L.Map('main-map', {
         center: [params.lat, params.lon], 
         zoom: params.zoom || 13
